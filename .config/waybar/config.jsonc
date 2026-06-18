@@ -1,0 +1,115 @@
+
+{
+    "position": "top",
+    "margin-top": 15,
+
+    "modules-left": [
+        "hyprland/workspaces",
+        "custom/prayer"
+    ],
+    "modules-center": ["clock"],
+    "modules-right": [
+        "tray",
+        "battery",
+        "pulseaudio",
+        "network",
+        "custom/swaync"
+    ],
+    
+    "clock": {
+    "format": "{:%a-%d %H:%M}",
+    "format-alt": "{:%Y-%m-%d %H:%M}",
+    "interval": 60,
+    "tooltip": false
+   },
+
+    "hyprland/workspaces": {
+        "format": "",
+        "persistent-workspaces": {
+              "*": 2, // 5 workspaces by default on every monitor
+              "HDMI-A-1": 3 // but only three on HDMI-A-1
+        },
+        "on-click": "activate",
+        "on-scroll-down": "hyprctl dispatch workspace e+1",
+        "on-scroll-up": "hyprctl dispatch workspace e-1",
+        "cursor": "pointer"
+      },
+    
+      "custom/prayer": {
+        "format": "{}",
+        "exec": "/home/zrin/scripts/prayer_times.py",
+        "return-type": "json",
+        "interval": 60, // Cek setiap 1 menit sekali
+        "on-click": "notify-send 'Mengupdate jadwal...' && pkill -RTMIN+1 waybar", // klik buat refresh (opsional)
+        "signal": 1
+    },
+
+    "tray": {
+        "icon-size": 21,
+        "spacing": 10,
+        "icons": {
+
+        }
+       
+    },
+        "pulseaudio": {
+        "format": "󰕾  {volume}%",
+        "format-bluetooth": "󰂰  {volume}%",
+        "format-muted": "󰖁",
+        "format-icons": {
+            "alsa_output.pci-0000_00_1f.3.analog-stereo": "",
+            "alsa_output.pci-0000_00_1f.3.analog-stereo-muted": "",
+            "headphone": "",
+            "hands-free": "",
+            "headset": "",
+            "phone": "",
+            "phone-muted": "",
+            "portable": "",
+            "car": "",
+            "default": ["", ""]
+        },
+        "scroll-step": 1,
+        "on-click": "~/.config/rofi/launchers/audio-switcher.sh",
+        "ignored-sinks": ["Easy Effects Sink"]
+    },
+    "network": {
+        "interface": "wlan0",
+        "format": "{ifname}",
+        "format-wifi": "",
+        "on-click": "~/.config/rofi/launchers/wifi.sh",
+        "format-ethernet": "{ipaddr}/{cidr} 󰊗",
+        "format-disconnected": "", //An empty format will hide the module.
+        "tooltip-format": "{ifname} via {gwaddr} 󰊗",
+        "tooltip-format-wifi": "{essid} ({signalStrength}%) ",
+        "tooltip-format-ethernet": "{ifname} ",
+        "tooltip-format-disconnected": "Disconnected",
+        "max-length": 50
+    },
+    "battery": {
+        "interval": 60,
+        "states": {
+            "warning": 30,
+            "critical": 15
+        },
+        "format": "{capacity}% {icon}",
+        "format-icons": [
+            "",
+            "",
+            "",
+            "",
+            ""
+        ],
+        "max-length": 25
+    
+    },
+      "custom/swaync": {
+        "tooltip": true,
+        "format": "",
+        "return-type": "json",
+        "exec-if": "which swaync-client",
+        "exec": "swaync-client -swb",
+        "on-click": "swaync-client -t -sw",
+        "on-click-right": "swaync-client -d -sw",
+        "escape": true
+    }
+}

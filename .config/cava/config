@@ -1,0 +1,28 @@
+[general]
+# Otomatis reload visualizer kalau ada perubahan konfigurasi
+live-config = 1
+
+# Jumlah bar (0 = otomatis menyesuaikan lebar terminal lu)
+bars = 0
+bar_width = 2
+bar_spacing = 1
+
+[input]
+# Menggunakan Pipewire sebagai standar audio capture modern di Arch Linux
+method = pipewire
+source = auto
+
+[output]
+# Menggunakan noncurses agar rendering lebih mulus dan hemat resource
+method = noncurses
+channels = stereo
+
+[color]
+# KUNCI UTAMA: Kita set ke 'default' agar Cava langsung menyedot 
+# palet warna dinamis dari terminal Kitty lu yang sudah terhubung ke Pywal.
+background = default
+foreground = default
+
+[smoothing]
+# Pengaturan peredam noise standar agar gerakan bar naik-turunnya smooth dan estetik
+noise_reduction = 77
