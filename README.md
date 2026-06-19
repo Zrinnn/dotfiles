@@ -1,6 +1,6 @@
 # Zrin's Dotfiles
 
-Hi, I'm Zrin from Indonesia 🇮🇩
+Hi, I'm Zrin
 
 Curious about everything.
 
