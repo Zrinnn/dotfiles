@@ -1,15 +1,5 @@
 # Zrin's Dotfiles
 
-![Desktop](screenshots/desktop.png)
-
-> Hi, I'm Zrin from Indonesia 🇮🇩
->
-> Curious about everything.
->
-> ```bash
-> sudo pacman -S knowledge
-> ```
-
 My personal Arch Linux configuration built around **Hyprland**, **Pywal**, and a collection of custom scripts.
 
 The main goal of this setup is simple:
