@@ -72,7 +72,7 @@ Wallpaper
   Pywal
     ↓
 ┌─────────────┬─────────────┬─────────────┐
-│   Waybar    │   SwayNC    │  Hyprlock   │
+│   Waybar    │   SwayNC    │    Rofi     │
 └─────────────┴─────────────┴─────────────┘
 ```
 
@@ -132,19 +132,6 @@ The implementation is adapted through custom scripts and Hyprland keybindings.
 
 ---
 
-# Repository Structure
-
-```text
-.
-├── .config/
-├── scripts/
-├── screenshots/
-├── walls/
-└── README.md
-```
-
----
-
 # Notes
 
 These dotfiles are not intended to be a perfect or universal setup.
@@ -157,7 +144,7 @@ The repository will continue to evolve over time.
 
 # Credits
 
-Infinite Desktop implementation inspired by:
+Infinite Desktop by:
 
 * https://github.com/carlosareyesv204-cpu/hyprland-infinite-desktop
 
