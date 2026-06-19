@@ -1,28 +1,32 @@
 # Zrin's Dotfiles
 
-```
+![Desktop](screenshots/desktop.png)
 
-A personal Arch Linux setup built around Hyprland, Waybar, Pywal and a collection of custom scripts.
+> Hi, I'm Zrin from Indonesia 🇮🇩
+>
+> Curious about everything.
+>
+> ```bash
+> sudo pacman -S knowledge
+> ```
+
+My personal Arch Linux configuration built around **Hyprland**, **Pywal**, and a collection of custom scripts.
+
+The main goal of this setup is simple:
+
+> **Change the wallpaper, recolor the entire desktop.**
+
+Instead of manually maintaining themes for every component, this setup uses **Pywal** to generate a color palette from the current wallpaper and automatically apply it across the desktop environment.
+
+As a result, the desktop always remains visually consistent regardless of which wallpaper is active.
 
 ---
 
-<img width="1366" height="751" alt="image" src="https://github.com/user-attachments/assets/31e3cd06-83b4-447d-afdd-e689dfe4e457" />
+# Desktop Preview
 
+## Main Desktop
 
-## Components
-
-| Component         | Software |
-| ----------------- | -------- |
-| Window Manager    | Hyprland |
-| Bar               | Waybar   |
-| Notifications     | SwayNC   |
-| Lock Screen       | Hyprlock |
-| Launcher          | Rofi     |
-| Terminal          | Kitty    |
-| File Manager      | Dolphin  |
-| Wallpaper Manager | Swww     |
-| Colors            | Pywal    |
-| Audio             | PipeWire |
+![Desktop](screenshots/desktop.png)
 
 ---
 
@@ -30,7 +34,16 @@ A personal Arch Linux setup built around Hyprland, Waybar, Pywal and a collectio
 
 ![Waybar](screenshots/waybar.png)
 
-A minimal Waybar setup integrated with Pywal colors.
+Waybar serves as the primary status bar and displays:
+
+* Workspaces
+* Clock
+* Battery information
+* Audio status
+* Network information
+* Custom modules
+
+Its colors are generated dynamically using Pywal.
 
 ---
 
@@ -38,7 +51,14 @@ A minimal Waybar setup integrated with Pywal colors.
 
 ![SwayNC](screenshots/swaync.png)
 
-Notification center styled to match the current wallpaper colors.
+SwayNC is used as the notification daemon and notification center.
+
+Features:
+
+* Notification history
+* Do Not Disturb mode
+* Quick access controls
+* Pywal-based color integration
 
 ---
 
@@ -46,55 +66,118 @@ Notification center styled to match the current wallpaper colors.
 
 ![Hyprlock](screenshots/hyprlock.png)
 
-Simple lock screen with wallpaper integration.
+A simple lock screen configuration designed to match the current wallpaper and desktop theme.
 
 ---
 
-## Rofi
+# Design Philosophy
 
-![Rofi](screenshots/rofi.png)
+Most desktop setups require separate themes for every application.
 
-Custom launcher theme matching the desktop color scheme.
+This setup follows a different approach:
+
+```text
+Wallpaper
+    ↓
+  Pywal
+    ↓
+┌─────────────┬─────────────┬─────────────┐
+│   Waybar    │   SwayNC    │  Hyprlock   │
+└─────────────┴─────────────┴─────────────┘
+```
+
+The wallpaper becomes the source of truth for the entire desktop.
+
+When a wallpaper changes:
+
+1. Pywal extracts colors from the image.
+2. A new palette is generated.
+3. Desktop components automatically adapt to the new colors.
+
+This creates a consistent visual experience without manually editing themes.
 
 ---
 
-## Features
+# Core Components
 
-* Infinite Desktop navigation
-* Pywal-powered dynamic colors
-* Custom Waybar modules
-* SwayNC integration
-* Wallpaper switcher
-* Custom scripts
+| Component | Purpose                               |
+| --------- | ------------------------------------- |
+| Hyprland  | Wayland compositor and window manager |
+| Waybar    | Status bar                            |
+| SwayNC    | Notification center                   |
+| Hyprlock  | Lock screen                           |
+| Kitty     | Terminal emulator                     |
+| Dolphin   | File manager                          |
+| Rofi      | Application launcher                  |
+| Swww      | Wallpaper daemon                      |
+| Pywal     | Dynamic color generation              |
+| PipeWire  | Audio management                      |
 
 ---
 
-## Scripts
+# Features
 
-This setup includes custom desktop scripts and adaptations based on community projects.
+* Dynamic wallpaper-based theming
+* Pywal integration across multiple components
+* Custom Waybar configuration
+* SwayNC notification center
+* Hyprlock styling
+* Wallpaper management with Swww
+* Infinite Desktop workflow
+* Custom shell scripts
 
-### Credits
+---
 
-Infinite Desktop functionality is based on:
+# Infinite Desktop
+
+One of the most interesting parts of this setup is the Infinite Desktop workflow.
+
+Inspired by:
 
 https://github.com/carlosareyesv204-cpu/hyprland-infinite-desktop
 
-Thanks to the original author for the project.
+The idea is to make workspace navigation feel more fluid and less restricted compared to traditional workspace switching.
+
+The implementation is adapted through custom scripts and Hyprland keybindings.
 
 ---
 
-## Installation
+# Repository Structure
 
-Clone the repository:
-
-```bash
-git clone git@github.com:Zrinnn/dotfiles.git
+```text
+.
+├── .config/
+├── scripts/
+├── screenshots/
+├── walls/
+└── README.md
 ```
 
-Copy the required configuration files and restart Hyprland.
+---
+
+# Notes
+
+These dotfiles are not intended to be a perfect or universal setup.
+
+They represent my personal Linux journey, experiments, and workflow preferences while learning more about Arch Linux, Hyprland, scripting, and desktop customization.
+
+The repository will continue to evolve over time.
 
 ---
 
-## Notes
+# Credits
 
-These dotfiles are constantly evolving as I continue learning Linux and customizing my desktop environment.
+Infinite Desktop implementation inspired by:
+
+* https://github.com/carlosareyesv204-cpu/hyprland-infinite-desktop
+
+Special thanks to the communities behind:
+
+* Hyprland
+* Waybar
+* SwayNC
+* Kitty
+* Pywal
+* Swww
+* Rofi
+* Arch Linux
