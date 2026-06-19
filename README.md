@@ -6,11 +6,8 @@ A personal Arch Linux setup built around Hyprland, Waybar, Pywal and a collectio
 
 ---
 
-## Desktop Preview
+<img width="1366" height="751" alt="image" src="https://github.com/user-attachments/assets/31e3cd06-83b4-447d-afdd-e689dfe4e457" />
 
-![Desktop](screenshots/desktop.png)
-
----
 
 ## Components
 
